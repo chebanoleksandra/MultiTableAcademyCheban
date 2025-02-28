@@ -26,6 +26,6 @@ FROM Groups, Departments, Faculties
 WHERE Groups.DepartmentId = Departments.Id AND Departments.FacultyId = Faculties.Id AND Groups.Year = 5
 
 --11
-SELECT Teachers.Name + ' ' + Teachers.Surname as 'Teacher', Subjects.Name, Groups.Name
+SELECT Teachers.Name + ' ' + Teachers.Surname as 'Teacher', Subjects.Name as 'Subject', Groups.Name as 'Group'
 FROM Teachers, Subjects, Groups, Lectures, GroupsLectures
 WHERE Lectures.TeacherId = Teachers.Id AND Lectures.SubjectId = Subjects.Id AND GroupsLectures.LectureId = Lectures.Id AND GroupsLectures.GroupId = Groups.Id AND Lectures.LectureRoom = 'B103'
